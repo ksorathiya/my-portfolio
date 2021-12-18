@@ -203,7 +203,7 @@ const Home = () => {
                 <div className="">
                   <a
                     className="inline-block w-full lg:w-auto py-3 px-6 font-bold border rounded bg-black text-white rounded-3xl text-sm"
-                    href="mailto://sorathiyakartik@gmail.com"
+                    href="mailto:sorathiyakartik@gmail.com"
                     target="_blank"
                   >
                     CONNECT WITH ME
