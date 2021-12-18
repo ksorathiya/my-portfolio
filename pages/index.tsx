@@ -1,15 +1,17 @@
 import Head from "next/head";
 import { generateRSS } from "../rssUtil";
-import { Markdown } from "../components/Markdown";
-import { PostData, loadBlogPosts, loadMarkdownFile } from "../loader";
-import { PostCard } from "../components/PostCard";
+// import { Markdown } from "../components/Markdown";
+// import { PostData, loadBlogPosts, loadMarkdownFile } from "../loader";
+import { loadBlogPosts, loadMarkdownFile } from "../loader";
+// import { PostCard } from "../components/PostCard";
 
-const Home = (props: {
-  introduction: string;
-  features: string;
-  readme: string;
-  posts: PostData[];
-}) => {
+// const Home = (props: {
+//   introduction: string;
+//   features: string;
+//   readme: string;
+//   posts: PostData[];
+// }) => {
+const Home = () => {
   return (
     <div className="antialiased bg-body text-body font-body">
       <Head>

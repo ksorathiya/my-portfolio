@@ -1,5 +1,5 @@
 import React from "react";
-import { globals } from "../globals";
+// import { globals } from "../globals";
 
 export const Footer: React.FC = () => (
   <div className="footer">
