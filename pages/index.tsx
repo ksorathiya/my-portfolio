@@ -4,16 +4,16 @@ import { generateRSS } from "../rssUtil";
 // import { PostData, loadBlogPosts, loadMarkdownFile } from "../loader";
 import { loadBlogPosts, loadMarkdownFile } from "../loader";
 // import { PostCard } from "../components/PostCard";
-import useSWR from "swr";
+// import useSWR from "swr";
 
-const fetcher = (url: RequestInfo) =>
-  fetch(url, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization:
-        "Bearer BQAKgymf7l5MQM_3Ar_OYgQuXJ1MyDbdzgVd-mCgK84sLLJcbQroH4GsSCsilCy8cG-sZPx6zpnR0HOsnWLL7xslWmqaFGPpk54ItzgBe8W2gIe3jLKBv4LGntWiJEB9PcBWP3hoi4_DeeBuypEYYzFS_537sLY1AXBKj_wwRrj6",
-    },
-  }).then((res) => res.json());
+// const fetcher = (url: RequestInfo) =>
+//   fetch(url, {
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization:
+//         "Bearer BQAKgymf7l5MQM_3Ar_OYgQuXJ1MyDbdzgVd-mCgK84sLLJcbQroH4GsSCsilCy8cG-sZPx6zpnR0HOsnWLL7xslWmqaFGPpk54ItzgBe8W2gIe3jLKBv4LGntWiJEB9PcBWP3hoi4_DeeBuypEYYzFS_537sLY1AXBKj_wwRrj6",
+//     },
+//   }).then((res) => res.json());
 
 // const Home = (props: {
 //   introduction: string;
@@ -22,10 +22,10 @@ const fetcher = (url: RequestInfo) =>
 //   posts: PostData[];
 // }) => {
 const Home = () => {
-  const { data, error } = useSWR(
-    "https://api.spotify.com/v1/me/player/recently-played",
-    fetcher
-  );
+  // const { data, error } = useSWR(
+  //   "https://api.spotify.com/v1/me/player/recently-played",
+  //   fetcher
+  // );
 
   return (
     <div className="antialiased bg-body text-body font-body">
