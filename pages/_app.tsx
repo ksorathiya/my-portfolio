@@ -13,7 +13,7 @@ const App: React.FC = ({ Component, pageProps }: any) => {
           async
           defer
           data-website-id="cdae2032-c587-40f3-b564-80f15e53f19a"
-          src="https://portfolio-analytics.vercel.app/umami.js"
+          src="https://analytics.sorathiyakartik.com/umami.js"
         ></script>
         {globals.googleAnalyticsId && (
           <script
