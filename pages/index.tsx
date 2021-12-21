@@ -4,7 +4,7 @@ import { generateRSS } from "../rssUtil";
 // import { PostData, loadBlogPosts, loadMarkdownFile } from "../loader";
 import { loadBlogPosts, loadMarkdownFile } from "../loader";
 // import { PostCard } from "../components/PostCard";
-// import useSWR from "swr";
+import useSWR from "swr";
 
 // const fetcher = (url: RequestInfo) =>
 //   fetch(url, {
@@ -21,11 +21,16 @@ import { loadBlogPosts, loadMarkdownFile } from "../loader";
 //   readme: string;
 //   posts: PostData[];
 // }) => {
+
+const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
+
 const Home = () => {
   // const { data, error } = useSWR(
   //   "https://api.spotify.com/v1/me/player/recently-played",
   //   fetcher
   // );
+
+  const { data } = useSWR("/api/spotify", fetcher, { refreshInterval: 5000 });
 
   return (
     <div className="antialiased bg-body text-body font-body">
@@ -58,7 +63,7 @@ const Home = () => {
                 </a>
                 <div className="lg:hidden">
                   {/* <button className="block navbar-burger text-gray-500 hover:text-gray-700 focus:outline-none">
-              <svg className="h-4 w-4" fill="currentColor " viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-4 w-4" fill="currentColor " viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"/>
                 <title>Mobile menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
               </svg>
@@ -158,12 +163,12 @@ const Home = () => {
                   I understand what you want, build what you need, and deliver
                   what you deserve.
                 </h2>
-                <div className="mb-12">
+                <div className="mb-12 w-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="298"
-                    height="32"
-                    viewBox="0 0 298 32"
+                    // width="298"
+                    // height="32"
+                    // viewBox="0 0 298 32"
                     fill="none"
                     className="m-auto mb-8"
                   >
@@ -276,19 +281,71 @@ const Home = () => {
             </nav>
           </div>
         </section>
+        {data && !data.error && (
+          <section className="md:py-20 py-10 bg-gray-800">
+            <div className="container px-4 w-4/6 m-auto">
+              <h1 className="text-2xl mt-2 mb-6 font-bold text-white">
+                {data && data.isPlaying ? "Now playing" : "Now paused"}
+              </h1>
+              <div className="flex flex-wrap items-center -mx-4">
+                <div className="w-full lg:w-5/12 px-4 mb-12 lg:mb-0">
+                  <img
+                    className="mx-auto lg:mb-10  object-cover"
+                    src={data && data.albumImageUrl}
+                    alt=""
+                  />
+                  {/* TODO: Show Song Progress Bar */}
+                  {/* <div className="w-full bg-gray-700 h-1 rounded-lg">
+                    <div
+                      className="bg-green-500 h-1 rounded-lg"
+                      style={{ width: "45%" }}
+                    ></div>
+                  </div> */}
+                </div>
+                <div className="w-full lg:w-7/12 px-4">
+                  <div className="max-w-xl lg:ml-auto ">
+                    <img
+                      className="lg:mb-4 md:mb-2 lg:w-32 md:w-20 w-16 mb-3"
+                      src="https://static.shuffle.dev/uploads/files/a3/a3cd554fe4981381f50e429bfc300162d2905bc9/Spotify-Logo-RGB-Green.png"
+                      alt=""
+                    />
+                    <h2 className="lg:mb-16 md:mb-6 mb-4 lg:text-5xl md:text-3xl font-bold font-heading text-white">
+                      {data && data.title}
+                    </h2>
+                    {/* <p
+                    className="mb-9 text-lg text-gray-500 leading-loose"
+                    data-removed="true"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque massa nibh, pulvinar vitae aliquet nec,
+                    accumsan aliquet orci.
+                  </p> */}
+                    <p className="lg:text-2xl md:text-xl text-sm font-bold font-heading text-white">
+                      {data && data.artist}
+                    </p>
+                    <p className="lg:text-lg md:text-sm text-xs text-gray-500 text-gray-300">
+                      {data && data.album}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         <section className="relative py-20 bg-green-500">
           <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-800"></div>
           <div className="relative container px-4 mx-auto">
             <div className="flex flex-wrap items-center -mx-4">
               <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
                 <div className="text-center lg:text-left">
-                  <img
+                  {/* <img
                     className="w-36 mb-6 object-cover inline-flex"
                     src="mockup-assets/logos/spotify_green.png"
                     alt=""
-                  />
+                  /> */}
                   <h2 className="mb-6 text-4xl lg:text-5xl font-bold text-white">
-                    Let's Vibe ​💃​🕺​🎶​🎉​
+                    Let's vibe on my go to playlist​💃​🕺​🎶​🎉​
                   </h2>
 
                   {/* <p className="text-gray-50 lg:pr-10 leading-loose">
@@ -312,50 +369,93 @@ const Home = () => {
         </section>
         <section>
           <div className="container mx-auto px-4">
-            <footer className="">
-              <div className="mt-16 mb-8 border-b border-gray-50"></div>
-              <div className="container px-4 mx-auto">
-                <div className="pb-10">
-                  <p className="mt-6 mb-4 inline text-sm text-left text-gray-400">
-                    <span>© 2021 All rights reserved.</span>
-                  </p>
-                  <div className="order-first lg:order-last px-12 float-right">
+            <footer className="py-8">
+              <div className="container px-4 mx-auto text-center">
+                {/* <a
+                  className="inline-block mx-auto text-gray-600 text-2xl leading-none"
+                  href="#"
+                >
+                  <img
+                    className="h-8"
+                    src="mockup-assets/logos/shuffle-ux.svg"
+                    alt=""
+                    width="auto"
+                  />
+                </a> */}
+                <ul className="my-10 flex flex-wrap space-x-8 items-center justify-center">
+                  <li className="mb-2 md:mb-0">
                     <a
-                      className="inline-block mr-8"
-                      href="https://www.facebook.com/ksorathiya/"
+                      className="text-sm text-gray-900 hover:text-gray-700"
+                      href="https://analytics.sorathiyakartik.com/share/mKgdevDb/Kartik%20-%20Portfolio"
                       target="_blank"
                     >
-                      <img
-                        src="images/facebook-circle-line-1.svg"
-                        alt="Facebook Logo"
-                        className=""
-                      />
+                      Site Analytics
                     </a>
-                    {/* <!--        <a className="inline-block mr-8" href="">
-                <img src="images/twitter-line-1.svg" alt=""/>
-              </a>--> */}
+                  </li>
+                  {/* <li className="mb-2 md:mb-0">
                     <a
-                      className="inline-block mr-8"
-                      href="https://www.instagram.com/k_sorathiya/"
-                      target="_blank"
+                      className="text-sm text-gray-900 hover:text-gray-700"
+                      href="#"
                     >
-                      <img
-                        src="images/instagram-line-1.svg"
-                        alt="Instagram Logo"
-                      />
+                      Company
                     </a>
+                  </li>
+                  <li className="mb-2 md:mb-0">
                     <a
-                      className="inline-block"
-                      href="https://www.linkedin.com/in/kartiksorathiya/"
-                      target="_blank"
+                      className="text-sm text-gray-900 hover:text-gray-700"
+                      href="#"
                     >
-                      <img
-                        src="images/linkedin-box-line-1.svg"
-                        alt="LinkedIn Logo"
-                      />
+                      Services
                     </a>
-                  </div>
+                  </li>
+                  <li className="mb-2 md:mb-0">
+                    <a
+                      className="text-sm text-gray-900 hover:text-gray-700"
+                      href="#"
+                    >
+                      Testimonials
+                    </a>
+                  </li> */}
+                </ul>
+                <div>
+                  <a
+                    className="inline-block mr-8"
+                    href="https://www.facebook.com/ksorathiya/"
+                    target="_blank"
+                  >
+                    <img
+                      src="images/facebook-circle-line-1.svg"
+                      alt="Facebook Logo"
+                      className=""
+                    />
+                  </a>
+                  <a
+                    className="inline-block mr-8"
+                    href="https://www.instagram.com/k_sorathiya/"
+                    target="_blank"
+                  >
+                    <img
+                      src="images/instagram-line-1.svg"
+                      alt="Instagram Logo"
+                    />
+                  </a>
+                  <a
+                    className="inline-block"
+                    href="https://www.linkedin.com/in/kartiksorathiya/"
+                    target="_blank"
+                  >
+                    <img
+                      src="images/linkedin-box-line-1.svg"
+                      alt="LinkedIn Logo"
+                    />
+                  </a>
                 </div>
+              </div>
+              <div className="mt-12 mb-8 border-b border-gray-50"></div>
+              <div className="container px-4 mx-auto">
+                <p className="text-center text-sm text-gray-400">
+                  All rights reserved © Kartik Sorathiya
+                </p>
               </div>
             </footer>
           </div>
