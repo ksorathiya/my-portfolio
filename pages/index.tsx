@@ -30,7 +30,21 @@ const Home = () => {
   //   fetcher
   // );
 
-  const { data } = useSWR("/api/spotify", fetcher, { refreshInterval: 5000 });
+  const { data: currently_playing_data } = useSWR(
+    "/api/spotify-now-playing",
+    fetcher,
+    {
+      refreshInterval: 5000,
+    }
+  );
+
+  const { data: recently_played_data } = useSWR(
+    "/api/spotify-recently-played",
+    fetcher,
+    {
+      refreshInterval: 5000,
+    }
+  );
 
   return (
     <div className="antialiased bg-body text-body font-body">
@@ -166,9 +180,9 @@ const Home = () => {
                 <div className="mb-12 w-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    // width="298"
-                    // height="32"
-                    // viewBox="0 0 298 32"
+                    width="298"
+                    height="32"
+                    viewBox="0 0 298 32"
                     fill="none"
                     className="m-auto mb-8"
                   >
@@ -281,17 +295,211 @@ const Home = () => {
             </nav>
           </div>
         </section>
-        {data && !data.error && (
+
+        <section className="py-20">
+          <div className="container px-4 mx-auto">
+            <div className="flex flex-wrap items-center -mx-4">
+              <div className="w-full lg:w-1/2 px-4 mb-5">
+                <div className="lg:max-w-sm">
+                  <h2 className="text-3xl mt-3 font-medium font-heading">
+                    Work Experience
+                  </h2>
+                  <svg
+                    className="mb-12 "
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="258"
+                    height="14"
+                    viewBox="0 0 258 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 7.54292C54.4925 3.03781 151.543 -4.13195 257 12"
+                      stroke="#D0EAEC"
+                      stroke-width="4"
+                    />
+                  </svg>
+                  <div className="flex mb-10">
+                    <div className="max-w-sm">
+                      <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
+                        Solvative
+                      </h3>
+                      <h6 className="mb-2 text-md">
+                        Solution Architect | Tech Lead
+                      </h6>
+                      <p className="text-gray-500 leading-loose">
+                        August 2016 - present
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex mb-10">
+                    <div className="max-w-sm">
+                      <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
+                        Seneca Hackathon
+                      </h3>
+                      <h6 className="mb-2 text-md">Director of IT</h6>
+                      <p className="text-gray-500 leading-loose">
+                        January 2020 - present
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 px-4 mb-5">
+                <div className="lg:max-w-sm">
+                  <h2 className=" text-3xl mt-3 font-medium font-heading">
+                    Education
+                  </h2>
+                  <svg
+                    className="mb-12"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="159"
+                    height="14"
+                    viewBox="0 0 159 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 7.54292C33.806 3.03781 93.3254 -4.13195 158 12"
+                      stroke="#FFE0D7"
+                      stroke-width="4"
+                    />
+                  </svg>
+                  <div className="flex mb-10">
+                    <div className="max-w-sm">
+                      <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
+                        Seneca College
+                      </h3>
+                      <h6 className="mb-2 text-md">
+                        Certification | Project Management in IT
+                      </h6>
+                      <p className="text-gray-500 leading-loose">2020 - 2021</p>
+                    </div>
+                  </div>
+                  <div className="flex mb-10">
+                    <div className="max-w-sm">
+                      <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
+                        L.D. College of Engineering
+                      </h3>
+                      <h6 className="mb-2 text-md">
+                        B.E. | Information Technology
+                      </h6>
+                      <p className="text-gray-500 leading-loose">2012 - 2016</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 px-4 mb-5">
+                <div className="lg:max-w-sm">
+                  <h2 className=" text-3xl mt-3 font-medium font-heading">
+                    Skills
+                  </h2>
+                  <svg
+                    className="mb-12"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="84"
+                    height="14"
+                    viewBox="0 0 84 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 7.54292C18.1343 3.03781 49.2209 -4.13195 83 12"
+                      stroke="#D0EAEC"
+                      stroke-width="4"
+                    />
+                  </svg>
+                  <div className="flex mb-10">
+                    <div className="w-full">
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Requirement Gathering and Analysis
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Project Management
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Solution Architect
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        System Administration
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        DevOps
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Full Stack Development
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 px-4 mb-5">
+                <img
+                  className="mt-12 w-full lg:mb-10  object-cover"
+                  src="mockup-assets/images/macbook_pro.svg"
+                  alt=""
+                />
+              </div>
+
+              {/* <div className="w-full lg:w-1/2 px-4 mb-5">
+                <div className="lg:max-w-sm">
+                  <h2 className="mb-12 text-3xl mt-3 font-medium font-heading">
+                    Skills
+                  </h2>
+                  <div className="flex mb-10">
+                    <div className="max-w-sm">
+                      <h3 className="mb-4 -mt-1 text-2xl font-bold font-heading">
+                        Seneca College
+                      </h3>
+                      <h6 className="mb-2 text-md">
+                        Certification | Project Management in IT
+                      </h6>
+                      <p className="text-gray-500 leading-loose">2020 - 2021</p>
+                    </div>
+                  </div>
+                  <div className="flex mb-10">
+                    <div className="max-w-sm">
+                      <h3 className="mb-4 -mt-1 text-2xl font-bold font-heading">
+                        L.D. College of Engineering
+                      </h3>
+                      <h6 className="mb-2 text-md">
+                        B.E. | Information Technology
+                      </h6>
+                      <p className="text-gray-500 leading-loose">2012 - 2016</p>
+                    </div>
+                  </div>
+                  <div className="flex mb-10">
+                    <div className="max-w-sm">
+                      <h3 className="mb-4 -mt-1 text-2xl font-bold font-heading">
+                        Solvative
+                      </h3>
+                      <h6 className="mb-2 text-md">
+                        Solution Architect | Tech Lead
+                      </h6>
+                      <p className="text-gray-500 leading-loose">
+                        August 2016 - present
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+            </div>
+          </div>
+        </section>
+
+        {currently_playing_data && !currently_playing_data.error && (
           <section className="md:py-20 py-10 bg-gray-800">
             <div className="container px-4 w-4/6 m-auto">
               <h1 className="text-2xl mt-2 mb-6 font-bold text-white">
-                {data && data.isPlaying ? "Now playing" : "Now paused"}
+                {currently_playing_data && currently_playing_data.isPlaying
+                  ? "Now playing"
+                  : "Now paused"}
               </h1>
               <div className="flex flex-wrap items-center -mx-4">
                 <div className="w-full lg:w-5/12 px-4 mb-12 lg:mb-0">
                   <img
                     className="mx-auto lg:mb-10  object-cover"
-                    src={data && data.albumImageUrl}
+                    src={
+                      currently_playing_data &&
+                      currently_playing_data.albumImageUrl
+                    }
                     alt=""
                   />
                   {/* TODO: Show Song Progress Bar */}
@@ -310,7 +518,7 @@ const Home = () => {
                       alt=""
                     />
                     <h2 className="lg:mb-16 md:mb-6 mb-4 lg:text-5xl md:text-3xl font-bold font-heading text-white">
-                      {data && data.title}
+                      {currently_playing_data && currently_playing_data.title}
                     </h2>
                     {/* <p
                     className="mb-9 text-lg text-gray-500 leading-loose"
@@ -321,10 +529,10 @@ const Home = () => {
                     accumsan aliquet orci.
                   </p> */}
                     <p className="lg:text-2xl md:text-xl text-sm font-bold font-heading text-white">
-                      {data && data.artist}
+                      {currently_playing_data && currently_playing_data.artist}
                     </p>
                     <p className="lg:text-lg md:text-sm text-xs text-gray-500 text-gray-300">
-                      {data && data.album}
+                      {currently_playing_data && currently_playing_data.album}
                     </p>
                   </div>
                 </div>
@@ -332,12 +540,48 @@ const Home = () => {
             </div>
           </section>
         )}
-
+        {recently_played_data && !recently_played_data.error && (
+          <section className="hidden lg:block md:block md:py-20 py-10 bg-gray-800">
+            <div className="container px-4 mx-auto">
+              <div className="max-w-2xl mx-auto mb-16 text-center">
+                <img
+                  className="lg:mb-6 md:mb-4 m-auto lg:w-32 md:w-20 w-16 mb-2"
+                  src="https://static.shuffle.dev/uploads/files/a3/a3cd554fe4981381f50e429bfc300162d2905bc9/Spotify-Logo-RGB-Green.png"
+                  alt=""
+                />
+                <h2 className="mt-2 text-4xl lg:text-5xl font-bold font-heading text-white">
+                  Recently Played
+                </h2>
+              </div>
+              <div className="flex flex-wrap -mx-4 -mb-4">
+                {recently_played_data.items.map((item: any) => {
+                  return (
+                    <div className="w-full lg:w-1/4 w-1/2 px-4 mb-12">
+                      <div className="flex mb-6">
+                        <img
+                          className="object-cover"
+                          src={item.track.album.images[0].url}
+                          alt=""
+                        />
+                      </div>
+                      <h2 className="mb-2 text-md font-bold font-heading text-white">
+                        {item.track.name}
+                      </h2>
+                      <p className="mb-4 text-xs leading-loose text-gray-300">
+                        {item.track.album.name}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
         <section className="relative py-20 bg-green-500">
           <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-800"></div>
           <div className="relative container px-4 mx-auto">
             <div className="flex flex-wrap items-center -mx-4">
-              <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
+              <div className="w-full lg:w-1/2 px-4 mb-5 mb-12 lg:mb-0">
                 <div className="text-center lg:text-left">
                   {/* <img
                     className="w-36 mb-6 object-cover inline-flex"
@@ -353,7 +597,7 @@ const Home = () => {
                   </p> */}
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-4">
+              <div className="w-full lg:w-1/2 px-4 mb-5">
                 <div className="lg:max-w-md bg-gray-50 text-center shadow-2xl p-1 rounded">
                   <iframe
                     src="https://open.spotify.com/embed/playlist/3RjnVIZl5eFAgk2uXSt2K4?utm_source=generator&amp;theme=0"
