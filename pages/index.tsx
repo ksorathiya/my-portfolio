@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { generateRSS } from "../rssUtil";
 // import { Markdown } from "../components/Markdown";
 // import { PostData, loadBlogPosts, loadMarkdownFile } from "../loader";
@@ -431,10 +432,13 @@ const Home = () => {
                 </div>
               </div>
               <div className="w-full lg:w-1/2 px-4 mb-5">
-                <img
+                <Image
                   className="mt-12 w-full lg:mb-10  object-cover"
-                  src="mockup-assets/images/macbook_pro.svg"
-                  alt=""
+                  src="/mockup-assets/images/macbook_pro.svg"
+                  width="100%"
+                  height="100%"
+                  layout="responsive"
+                  objectFit="contain"
                 />
               </div>
 
