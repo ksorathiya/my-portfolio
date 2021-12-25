@@ -34,6 +34,7 @@
     "deploy": "next build && next export && firebase deploy --only hosting"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
     "fecha": "^4.2.0",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
@@ -46,6 +47,7 @@
     "react-dom": "16.13.0",
     "react-markdown": "^4.3.1",
     "react-syntax-highlighter": "^12.2.1",
+    "react-use": "^17.3.1",
     "rss": "^1.2.2",
     "showdown": "^1.9.1",
     "swr": "^1.1.2-beta.0"

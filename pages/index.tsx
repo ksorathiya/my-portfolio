@@ -1,42 +1,29 @@
 import Head from "next/head";
 import Image from "next/image";
 import { generateRSS } from "../rssUtil";
+import { Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import { useTimeoutFn } from "react-use";
+
 // import { Markdown } from "../components/Markdown";
 // import { PostData, loadBlogPosts, loadMarkdownFile } from "../loader";
 import { loadBlogPosts, loadMarkdownFile } from "../loader";
 // import { PostCard } from "../components/PostCard";
 import useSWR from "swr";
 
-// const fetcher = (url: RequestInfo) =>
-//   fetch(url, {
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization:
-//         "Bearer BQAKgymf7l5MQM_3Ar_OYgQuXJ1MyDbdzgVd-mCgK84sLLJcbQroH4GsSCsilCy8cG-sZPx6zpnR0HOsnWLL7xslWmqaFGPpk54ItzgBe8W2gIe3jLKBv4LGntWiJEB9PcBWP3hoi4_DeeBuypEYYzFS_537sLY1AXBKj_wwRrj6",
-//     },
-//   }).then((res) => res.json());
-
-// const Home = (props: {
-//   introduction: string;
-//   features: string;
-//   readme: string;
-//   posts: PostData[];
-// }) => {
-
 const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
 
 const Home = () => {
-  // const { data, error } = useSWR(
-  //   "https://api.spotify.com/v1/me/player/recently-played",
-  //   fetcher
-  // );
-
   const { data: currently_playing_data } = useSWR(
     "/api/spotify-now-playing",
     fetcher,
     {
       refreshInterval: 5000,
     }
+  );
+  const { data: random_quote_data, mutate: random_quote_mutate } = useSWR(
+    "/api/random-quote",
+    fetcher
   );
 
   const { data: recently_played_data } = useSWR(
@@ -47,6 +34,34 @@ const Home = () => {
     }
   );
 
+  let randInt = function (min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  let [isShowing, setIsShowing] = useState(true);
+  let [rgb, shuffleRGB] = useState(
+    "rgb(" +
+      randInt(0, 128) +
+      ", " +
+      randInt(0, 128) +
+      ", " +
+      randInt(0, 128) +
+      ")"
+  );
+
+  let [, , resetIsShowing] = useTimeoutFn(() => {
+    setIsShowing(true);
+    random_quote_mutate();
+    shuffleRGB(
+      "rgb(" +
+        randInt(0, 128) +
+        ", " +
+        randInt(0, 128) +
+        ", " +
+        randInt(0, 128) +
+        ")"
+    );
+  }, 500);
   return (
     <div className="antialiased bg-body text-body font-body">
       <Head>
@@ -424,7 +439,7 @@ const Home = () => {
                       <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
                         DevOps
                       </h3>
-                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading stickerise ">
                         Full Stack Development
                       </h3>
                     </div>
@@ -487,6 +502,68 @@ const Home = () => {
             </div>
           </div>
         </section>
+        {random_quote_data && random_quote_data.content && (
+          <section
+            id="random-quote"
+            className="py-20 px-5"
+            style={{
+              backgroundColor: rgb,
+            }}
+          >
+            <div className="quote-box lg:w-1/2 md:w-2/3">
+              <div id="quote">
+                <Transition
+                  as={Fragment}
+                  show={isShowing}
+                  enter="transform transition duration-[400ms]"
+                  enterFrom="opacity-0 "
+                  enterTo="opacity-100 "
+                  leave="transform duration-200 transition ease-in-out"
+                  leaveFrom="opacity-100  "
+                  leaveTo="opacity-0  "
+                >
+                  <div>
+                    <i className="fa fa-quote-left" style={{ color: rgb }}></i>
+                    <blockquote className="quote-text" style={{ color: rgb }}>
+                      {random_quote_data.content}
+                    </blockquote>
+                    <small className="author" style={{ color: rgb }}>
+                      -- {random_quote_data.author}
+                    </small>
+                  </div>
+                </Transition>
+              </div>
+
+              <button
+                className="btn"
+                id="new-quote"
+                // onClick={random_quote_mutate}
+                style={{ backgroundColor: rgb }}
+                onClick={() => {
+                  setIsShowing(false);
+                  resetIsShowing();
+                }}
+              >
+                New Quote
+              </button>
+              <button className="btn" style={{ backgroundColor: rgb }}>
+                <a
+                  className="twitter-share-button"
+                  href={
+                    "https://twitter.com/intent/tweet?text=" +
+                    random_quote_data.content +
+                    " \n" +
+                    "- " +
+                    random_quote_data.author
+                  }
+                  data-size="large"
+                >
+                  <i className="fa fa-twitter"></i>
+                </a>
+              </button>
+            </div>
+          </section>
+        )}
 
         {currently_playing_data && !currently_playing_data.error && (
           <section className="md:py-20 py-10 bg-gray-800">
