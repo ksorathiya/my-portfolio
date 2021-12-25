@@ -106,7 +106,7 @@ const Home = () => {
             <li><a className="text-sm text-gray-500 hover:text-gray-700" href="#">Testimonials</a></li>
           </ul> */}
                 <a
-                  className="hidden lg:block px-6 py-3 text-sm text-white font-bold border border-gray-100 hover:border-gray-200 rounded-3xl bg-black"
+                  className="hidden lg:block md:block px-6 py-3 text-sm text-white font-bold border border-gray-100 hover:border-gray-200 rounded-3xl bg-black"
                   href="https://docs.google.com/document/d/1T7Xl2qQHVSGoRYwqaGK23bnGhYISsMAO/edit?usp=sharing&amp;ouid=113641347303871215868&amp;rtpof=true&amp;sd=true"
                   target="_blank"
                 >
@@ -182,7 +182,7 @@ const Home = () => {
                 >
                   <img
                     style={{ position: "relative", top: "5px", left: "-2px" }}
-                    src="mockup-assets/images/my-photo.svg"
+                    src="mockup-assets/images/my-photo.png"
                     alt=""
                   />
                 </div>
@@ -315,7 +315,7 @@ const Home = () => {
         <section className="py-20">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap items-center -mx-4">
-              <div className="w-full lg:w-1/2 px-4 mb-5">
+              <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
                 <div className="lg:max-w-sm">
                   <h2 className="text-3xl mt-3 font-medium font-heading">
                     Work Experience
@@ -360,7 +360,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-4 mb-5">
+              <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
                 <div className="lg:max-w-sm">
                   <h2 className=" text-3xl mt-3 font-medium font-heading">
                     Education
@@ -403,7 +403,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-4 mb-5">
+              <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
                 <div className="lg:max-w-sm">
                   <h2 className=" text-3xl mt-3 font-medium font-heading">
                     Skills
@@ -446,10 +446,10 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-4 mb-5">
+              <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
                 <Image
                   className="mt-12 w-full lg:mb-10  object-cover"
-                  src="/mockup-assets/images/macbook_pro.svg"
+                  src="/mockup-assets/images/macbook_pro.png"
                   width="100%"
                   height="100%"
                   layout="responsive"
