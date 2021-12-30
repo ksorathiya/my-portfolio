@@ -9,6 +9,8 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1140px",
+      xxl: "1440px",
+      xxxl: "2560px",
     },
     colors: {
       current: "currentColor",
