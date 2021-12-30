@@ -70,7 +70,7 @@ const Home = () => {
       </Head>
       <div className="">
         <section>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-screen-xl">
             <nav className="px-10 py-8 bg-transparent">
               <div className="flex justify-between items-center">
                 <a className="text-gray-600 text-2xl leading-none" href="#">
@@ -168,7 +168,7 @@ const Home = () => {
         </section>
 
         <section className="">
-          <div className="container px-4 mx-auto">
+          <div className="container px-4 mx-auto max-w-screen-xl">
             <div className="relative pt-12 md:pt-16">
               <div className="max-w-2xl mb-16 mx-auto text-center">
                 <div
@@ -313,12 +313,12 @@ const Home = () => {
         </section>
 
         <section className="py-20">
-          <div className="container px-4 mx-auto">
-            <div className="flex flex-wrap items-center -mx-4">
+          <div className="container lg:px-32 px-5 mx-auto max-w-screen-xl">
+            <div className="flex flex-wrap content-start	 -mx-4">
               <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
                 <div className="lg:max-w-sm">
                   <h2 className="text-3xl mt-3 font-medium font-heading">
-                    Work Experience
+                    Work Experience 💻
                   </h2>
                   <svg
                     className="mb-12 "
@@ -363,7 +363,7 @@ const Home = () => {
               <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
                 <div className="lg:max-w-sm">
                   <h2 className=" text-3xl mt-3 font-medium font-heading">
-                    Education
+                    Education 🎓
                   </h2>
                   <svg
                     className="mb-12"
@@ -406,7 +406,7 @@ const Home = () => {
               <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
                 <div className="lg:max-w-sm">
                   <h2 className=" text-3xl mt-3 font-medium font-heading">
-                    Skills
+                    Skills 🪄
                   </h2>
                   <svg
                     className="mb-12"
@@ -447,61 +447,467 @@ const Home = () => {
                 </div>
               </div>
               <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
+                <div className="lg:max-w-sm">
+                  <h2 className=" text-3xl mt-3 font-medium font-heading">
+                    Certificates 💯
+                  </h2>
+                  <svg
+                    className="mb-12"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="159"
+                    height="14"
+                    viewBox="0 0 159 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 7.54292C33.806 3.03781 93.3254 -4.13195 158 12"
+                      stroke="#FFE0D7"
+                      stroke-width="4"
+                    />
+                  </svg>
+                  <div className="flex mb-10">
+                    <div className="w-1/3">
+                      <a
+                        href="https://www.credly.com/badges/50e5c366-bb09-49aa-94d5-e679b06ca67d/public_url"
+                        target="_blank"
+                      >
+                        <Image
+                          className="mt-12 lg:mb-10  object-cover inline drop-shadow-lg"
+                          src="/mockup-assets/images/aws-certified-solutions-architect-associate.png"
+                          width="50px"
+                          height="70px"
+                          layout="responsive"
+                          objectFit="contain"
+                        />
+                      </a>
+                    </div>
+                    <div className="w-1/3">
+                      <a
+                        href="https://www.credly.com/badges/41b40061-70af-4e1f-9986-e8c9ae5a9e2f/public_url"
+                        target="_blank"
+                      >
+                        <Image
+                          className="mt-12 lg:mb-10  object-cover inline drop-shadow-lg"
+                          src="/mockup-assets/images/aws-certified-cloud-practitioner.png"
+                          width="50px"
+                          height="70px"
+                          layout="responsive"
+                          objectFit="contain"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 md:w-full px-4 mb-5">
+                <div className="">
+                  <h2 className=" text-3xl mt-3 font-medium font-heading">
+                    Tools ⚒️ that make me, me !
+                  </h2>
+                  <svg
+                    className="mb-12"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="159"
+                    height="14"
+                    viewBox="0 0 159 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 7.54292C33.806 3.03781 93.3254 -4.13195 158 12"
+                      stroke="#FFE0D7"
+                      stroke-width="4"
+                    />
+                  </svg>
+                  <div className="flex mb-10">
+                    <div className="w-1/2">
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        NodeJS<span className="dot"></span>SailsJS
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        ReactJS<span className="dot"></span>NextJS
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        HTML<span className="dot"></span>CSS
+                        <span className="dot"></span>JS
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        MongoDB<span className="dot"></span>InfluxDB
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Redis<span className="dot"></span>Memcache
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        MySQL<span className="dot"></span>Postgres
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Nginx<span className="dot"></span>Apache
+                      </h3>
+                    </div>
+                    <div className="w-1/2 ml-5">
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Docker <span className="dot"></span> Kubernetes
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Ansible <span className="dot"></span> Teleport
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        AWS <span className="dot"></span> Cloudflare
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Linux Systems <span className="dot"></span> IoT
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Asterisk <span className="dot"></span> eJabberd
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        TICK Stack
+                      </h3>
+                      <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
+                        Jira <span className="dot"></span> Confluence
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 md:w-full px-4 mb-5">
                 <Image
-                  className="mt-12 w-full lg:mb-10  object-cover"
+                  className="mt-12 lg:mb-10  object-cover"
                   src="/mockup-assets/images/macbook_pro.png"
-                  width="100%"
-                  height="100%"
+                  width="100px"
+                  height="100px"
                   layout="responsive"
                   objectFit="contain"
                 />
               </div>
-
-              {/* <div className="w-full lg:w-1/2 px-4 mb-5">
-                <div className="lg:max-w-sm">
-                  <h2 className="mb-12 text-3xl mt-3 font-medium font-heading">
-                    Skills
-                  </h2>
-                  <div className="flex mb-10">
-                    <div className="max-w-sm">
-                      <h3 className="mb-4 -mt-1 text-2xl font-bold font-heading">
-                        Seneca College
-                      </h3>
-                      <h6 className="mb-2 text-md">
-                        Certification | Project Management in IT
-                      </h6>
-                      <p className="text-gray-500 leading-loose">2020 - 2021</p>
-                    </div>
-                  </div>
-                  <div className="flex mb-10">
-                    <div className="max-w-sm">
-                      <h3 className="mb-4 -mt-1 text-2xl font-bold font-heading">
-                        L.D. College of Engineering
-                      </h3>
-                      <h6 className="mb-2 text-md">
-                        B.E. | Information Technology
-                      </h6>
-                      <p className="text-gray-500 leading-loose">2012 - 2016</p>
-                    </div>
-                  </div>
-                  <div className="flex mb-10">
-                    <div className="max-w-sm">
-                      <h3 className="mb-4 -mt-1 text-2xl font-bold font-heading">
-                        Solvative
-                      </h3>
-                      <h6 className="mb-2 text-md">
-                        Solution Architect | Tech Lead
-                      </h6>
-                      <p className="text-gray-500 leading-loose">
-                        August 2016 - present
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </section>
+        {/* <section id="periodic-table" className="py-20 px-16 hidden md:block">
+          <h1>My Periodic Table</h1>
+          <h5>How I spend my time.</h5>
+          <div className="periodic-table w-full xxxl:w-1/2 xxl:w-2/3 xl:w-full grid grid-cols-9 gap-4 lg:gap-1 md:gap-1">
+            <div className="empty-spacer-1"></div>
+            <div className="empty-spacer-2"></div>
+            <div
+              className="periodic-element social-media"
+              data-description="I'm only on here to reject invitations 😂"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Li</div>
+                <div className="description text-xs font-light">LinkedIn</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element social-media"
+              data-description="Only so I don't miss out on my friends' milestones 🤷"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Fb</div>
+                <div className="description text-xs font-light">Facebook</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element just-trying"
+              data-description="Looking at amazing Dribbble 🏀 shots and internally die from the amount of talent/skill out there"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Hn</div>
+                <div className="description text-xs font-light">
+                  Hacker News
+                </div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="This is where my day and week starts, planning."
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Ji</div>
+                <div className="description text-xs font-light">Jira</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="Making custom emojis for Slack 💪🏻"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Sl</div>
+                <div className="description text-xs font-light">Slack</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element fun-stuff"
+              data-description="'Wikipedia Wormhole' is a thing. And it is dangerous 🐛"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Nf</div>
+                <div className="description text-xs font-light">Netflix</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element fun-stuff"
+              data-description="Choosing the right playlist. (If my Spotify is working... it's always not working)"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Sp</div>
+                <div className="description text-xs font-light">Spotify</div>
+              </div>
+            </div>
+            <a
+              className="periodic-element social-media"
+              data-description="If you say something witty, it's going on my Twitter 🐦"
+              href="https://twitter.com/meowlivia_"
+              target="_blank"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Tw</div>
+                <div className="description text-xs font-light">Twitter</div>
+              </div>
+            </a>
+            <div
+              className="periodic-element social-media"
+              data-description="Professional Dota 2 Watcher right here ✌️"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Mu</div>
+                <div className="description text-xs font-light">Meetup</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="Creating GitHub issues, a.k.a. tossing problems which I can solve to the frontend team"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Gt</div>
+                <div className="description text-xs font-light">GitHub</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="Trying to get yarn working after an update. The main reason I toss issues to the frontend team."
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Gl</div>
+                <div className="description text-xs font-light">GitLab</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element just-trying"
+              data-description="A skill I'm trying to learn 🎨... and failing to learn 😛"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Yt</div>
+                <div className="description text-xs font-light">Youtube</div>
+              </div>
+            </div>
+            <a
+              className="periodic-element just-trying"
+              data-description="Resident Designer. Keeping the diminishing flame of web design in me alive 🕯️"
+              href="https://tellystats.com"
+              target="_blank"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Bo</div>
+                <div className="description text-xs font-light">Books</div>
+              </div>
+            </a>
+            <div
+              className="periodic-element intense-work"
+              data-description="I just need to stop adding items and actually start doing things. Am I the only one who is still using Wunderlist? 😂"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Aws</div>
+                <div className="description text-xs font-light">AWS</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element fun-stuff"
+              data-description="I have zero cooking skills, so I watch cooking videos and never try cooking for real 🍳"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Cv</div>
+                <div className="description text-xs font-light">Cooking</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element fun-stuff"
+              data-description="Or any animal gifs, basically. 🐈🐕🦊🦔🦉🐍🐬🦄"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Dg</div>
+                <div className="description text-xs font-light">Dog Gifs</div>
+              </div>
+            </div>
+            <a
+              className="periodic-element fun-stuff"
+              data-description="Getting distracted by Toggl comics 🙃"
+              href="https://blog.toggl.com"
+              target="_blank"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Tg</div>
+                <div className="description text-xs font-light">Toggl</div>
+              </div>
+            </a>
+            <div
+              className="periodic-element just-trying"
+              data-description="I google every damn thing. Including movie spoilers. While watching the movie. Yes."
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Gg</div>
+                <div className="description text-xs font-light">Google</div>
+              </div>
+            </div>
+            <a
+              className="periodic-element just-trying"
+              data-description="I like spreadsheets so I create them for the smallest reasons 🧐"
+              href="https://docs.google.com/spreadsheets/d/1Dim2nKRjgpkjA4miqTzcLPT68L0B5LU2aWZWF5hHYAc/edit#gid=0"
+              target="_blank"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Ex</div>
+                <div className="description text-xs font-light">Excel</div>
+              </div>
+            </a>
+            <div
+              className="periodic-element intense-work"
+              data-description="I still StackOverflow the simplest shit 'just to be sure'. Where will we be without it ❤️"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">So</div>
+                <div className="description text-xs font-light">StackOv.</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="It's very much not my job, but sometimes I stick my hand into the Coding Projects jar 🍪 anyway"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Cd</div>
+                <div className="description text-xs font-light">Coding</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element just-trying"
+              data-description="I spend so much time on Codepen, I decided to go Pro because I felt bad 💸"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Cp</div>
+                <div className="description text-xs font-light">Codepen</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element just-trying"
+              data-description="We all have that one thing that keeps us alive 🛫🗺️"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Tr</div>
+                <div className="description text-xs font-light">Travel</div>
+              </div>
+            </div>
+            <a
+              className="periodic-element social-media"
+              data-description="Fuck this app. It's a terrible love-hate relationship."
+              href="https://www.instagram.com/meowliviaaa/"
+              target="_blank"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">In</div>
+                <div className="description text-xs font-light">Instagram</div>
+              </div>
+            </a>
+            <a
+              className="periodic-element fun-stuff"
+              data-description="Obsessing over musicals and stalking broadway stars is 👏🏻 not 👏🏻 a 👏🏻 crime!"
+              href="https://codepen.io/collection/XPWkdW/"
+              target="_blank"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Ga</div>
+                <div className="description text-xs font-light">Games</div>
+              </div>
+            </a>
+            <div
+              className="periodic-element fun-stuff"
+              data-description="I learn memes, I make memes, I breathe memes."
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Me</div>
+                <div className="description text-xs font-light">Memes</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="Battling double columns in Notion"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">No</div>
+                <div className="description text-xs font-light">Notion</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element social-media"
+              data-description="Oh my god. Someone please save me from this Reddit hell hole 😭"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Re</div>
+                <div className="description text-xs font-light">Reddit</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="Research &amp; Documentation nobody asks for 🤓📝"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Gm</div>
+                <div className="description text-xs font-light">Gmail</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="Stats. Data. Stats. Data. 📊 Just lots of reporting."
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Gd</div>
+                <div className="description text-xs font-light">Google Doc</div>
+              </div>
+            </div>
+            <div
+              className="periodic-element intense-work"
+              data-description="Ads. Ads. Ads. If you've seen a Toggl ad, it was me. (Sorry)"
+            >
+              <div className="periodic-element-inner px-2 py-1">
+                <div className="title text-md font-bold">Tw</div>
+                <div className="description text-xs font-light">Teamwork</div>
+              </div>
+            </div>
+          </div>
+          <div className="legend-table">
+            <div className="legend-table__wrapper">
+              <span className="legend-table__marker social-media"></span>
+              <span className="legend-table__text">Social Media</span>
+              <span className="legend-table__marker intense-work"></span>
+              <span className="legend-table__text">Serious Work</span>
+              <span className="legend-table__marker just-trying"></span>
+              <span className="legend-table__text">Personal Development</span>
+              <span className="legend-table__marker fun-stuff"></span>
+              <span className="legend-table__text">Fun Stuff</span>
+              <br />
+              <div className="legend-table__direction">
+                <span>&#8594; &ensp; Across the table: Importance</span>
+              </div>
+              <div className="legend-table__direction">
+                <span>&#8595; &ensp; Down the table: Time Spent</span>
+              </div>
+            </div>
+          </div>
+          <aside className="context">
+            <div className="explanation">
+              I try to be productive a lot, and I fail a lot, <br /> and I stand
+              back up again :)
+            </div>
+          </aside>
+        </section> */}
         {random_quote_data && random_quote_data.content && (
           <section
             id="random-quote"
@@ -510,7 +916,7 @@ const Home = () => {
               backgroundColor: rgb,
             }}
           >
-            <div className="quote-box lg:w-1/2 md:w-2/3">
+            <div className="quote-box max-w-screen-xl lg:w-1/2 md:w-2/3">
               <div id="quote">
                 <Transition
                   as={Fragment}
@@ -567,7 +973,7 @@ const Home = () => {
 
         {currently_playing_data && !currently_playing_data.error && (
           <section className="md:py-20 py-10 bg-gray-800">
-            <div className="container px-4 w-4/6 m-auto">
+            <div className="container max-w-screen-xl px-4 w-4/6 m-auto">
               <h1 className="text-2xl mt-2 mb-6 font-bold text-white">
                 {currently_playing_data && currently_playing_data.isPlaying
                   ? "Now playing"
@@ -623,7 +1029,7 @@ const Home = () => {
         )}
         {recently_played_data && !recently_played_data.error && (
           <section className="hidden lg:block md:block md:py-20 py-10 bg-gray-800">
-            <div className="container px-4 mx-auto">
+            <div className="container max-w-screen-xl px-4 mx-auto">
               <div className="max-w-2xl mx-auto mb-16 text-center">
                 <img
                   className="lg:mb-6 md:mb-4 m-auto lg:w-32 md:w-20 w-16 mb-2"
@@ -660,7 +1066,7 @@ const Home = () => {
         )}
         <section className="relative py-20 bg-green-500">
           <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-800"></div>
-          <div className="relative container px-4 mx-auto">
+          <div className="relative max-w-screen-xl container px-4 mx-auto">
             <div className="flex flex-wrap items-center -mx-4">
               <div className="w-full lg:w-1/2 px-4 mb-5 mb-12 lg:mb-0">
                 <div className="text-center lg:text-left">
@@ -692,8 +1098,9 @@ const Home = () => {
             </div>
           </div>
         </section>
+
         <section>
-          <div className="container mx-auto px-4">
+          <div className="container max-w-screen-xl mx-auto px-4">
             <footer className="py-8">
               <div className="container px-4 mx-auto text-center">
                 {/* <a

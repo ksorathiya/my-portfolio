@@ -9,8 +9,8 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1140px",
-      // xxl: "1440px",
-      // xxxl: "2560px",
+      xxl: "1440px",
+      xxxl: "2560px",
     },
     colors: {
       current: "currentColor",
@@ -357,6 +357,8 @@ module.exports = {
       min: "min-content",
       max: "max-content",
       prose: "65ch",
+      "screen-lg": "1024px",
+      "screen-xl": "1280px",
     },
     minHeight: {
       0: "0",
