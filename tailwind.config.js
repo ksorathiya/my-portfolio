@@ -15,7 +15,7 @@ module.exports = {
     colors: {
       current: "currentColor",
       transparent: "transparent",
-
+      linkedInBlue: "#005E93",
       black: "#000",
       white: "#fff",
 

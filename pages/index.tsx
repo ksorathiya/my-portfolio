@@ -190,8 +190,12 @@ const Home = () => {
                   Hi, I’m Kartik 🤘
                 </h3>
                 <h2 className="text-4xl lg:text-5xl font-heading font-medium">
-                  I understand what you want, build what you need, and deliver
-                  what you deserve.
+                  <pre>
+                    I understand your wants,
+                    <br /> build your needs, <br />
+                    and deliver your <br />
+                    requirements.
+                  </pre>
                 </h2>
                 <div className="mb-12 w-full">
                   <svg
@@ -225,11 +229,16 @@ const Home = () => {
                 {/* <!--I  carve your vision into reality with intuitive functionalities , resilient  systems and feasible products.--> */}
                 <div className="">
                   <a
-                    className="inline-block w-full lg:w-auto py-3 px-6 font-bold border rounded bg-black text-white rounded-3xl text-sm"
-                    href="mailto:sorathiyakartik@gmail.com"
+                    className="inline-block w-full lg:w-auto py-3 px-6 font-bold border rounded bg-linkedInBlue text-white rounded-3xl text-sm"
+                    href="https://www.linkedin.com/in/kartiksorathiya/"
                     target="_blank"
                   >
                     CONNECT WITH ME
+                    <img
+                      src="images/linkedin-box-line-white.svg"
+                      alt="LinkedIn Logo"
+                      className="inline pl-1"
+                    />
                   </a>
                 </div>
               </div>
@@ -502,7 +511,7 @@ const Home = () => {
               <div className="w-full lg:w-1/2 md:w-full px-4 mb-5">
                 <div className="">
                   <h2 className=" text-3xl mt-3 font-medium font-heading">
-                    Tools ⚒️ that make me, me !
+                    Tools ⚒️ that makes me, me!
                   </h2>
                   <svg
                     className="mb-12"
@@ -971,7 +980,8 @@ const Home = () => {
           </section>
         )}
 
-        {currently_playing_data && !currently_playing_data.error && (
+        {/* {currently_playing_data && !currently_playing_data.error && ( */}
+        {false && !currently_playing_data.error && (
           <section className="md:py-20 py-10 bg-gray-800">
             <div className="container max-w-screen-xl px-4 w-4/6 m-auto">
               <h1 className="text-2xl mt-2 mb-6 font-bold text-white">
@@ -1027,7 +1037,7 @@ const Home = () => {
             </div>
           </section>
         )}
-        {recently_played_data && !recently_played_data.error && (
+        {/* {recently_played_data && !recently_played_data.error && (
           <section className="hidden lg:block md:block md:py-20 py-10 bg-gray-800">
             <div className="container max-w-screen-xl px-4 mx-auto">
               <div className="max-w-2xl mx-auto mb-16 text-center">
@@ -1063,7 +1073,7 @@ const Home = () => {
               </div>
             </div>
           </section>
-        )}
+        )} */}
         <section className="relative py-20 bg-green-500">
           <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-800"></div>
           <div className="relative max-w-screen-xl container px-4 mx-auto">
