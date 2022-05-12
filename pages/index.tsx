@@ -26,13 +26,13 @@ const Home = () => {
     fetcher
   );
 
-  const { data: recently_played_data } = useSWR(
-    "/api/spotify-recently-played",
-    fetcher,
-    {
-      refreshInterval: 5000,
-    }
-  );
+//   const { data: recently_played_data } = useSWR(
+//     "/api/spotify-recently-played",
+//     fetcher,
+//     {
+//       refreshInterval: 5000,
+//     }
+//   );
 
   let randInt = function (min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
