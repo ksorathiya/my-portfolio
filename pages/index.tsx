@@ -230,15 +230,10 @@ const Home = () => {
                 <div className="">
                   <a
                     className="inline-block w-full lg:w-auto py-3 px-6 font-bold border rounded bg-linkedInBlue text-white rounded-3xl text-sm"
-                    href="https://www.linkedin.com/in/kartiksorathiya/"
+                    href="https://cal.com/kartik-sorathiya/30min"
                     target="_blank"
                   >
-                    CONNECT WITH ME
-                    <img
-                      src="images/linkedin-box-line-white.svg"
-                      alt="LinkedIn Logo"
-                      className="inline pl-1"
-                    />
+                    Schedule meeting with me :)
                   </a>
                 </div>
               </div>
