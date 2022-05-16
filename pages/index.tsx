@@ -230,7 +230,7 @@ const Home = () => {
                 <div className="">
                   <a
                     className="inline-block w-full lg:w-auto py-3 px-6 font-bold border rounded bg-linkedInBlue text-white rounded-3xl text-sm"
-                    href="https://cal.com/kartik-sorathiya/30min"
+                    href="https://cal.com/kartik-sorathiya"
                     target="_blank"
                   >
                     Schedule meeting with me :)
