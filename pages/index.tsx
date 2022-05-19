@@ -170,7 +170,7 @@ const Home = () => {
         <section className="">
           <div className="container px-4 mx-auto max-w-screen-xl">
             <div className="relative pt-12 md:pt-16">
-              <div className="max-w-2xl mb-16 mx-auto text-center">
+              <div className="max-w-2xl mb-8 md:mb-16 mx-auto text-center">
                 <div
                   style={{
                     width: "160px",
@@ -186,10 +186,10 @@ const Home = () => {
                     alt=""
                   />
                 </div>
-                <h3 className="mb-8 text-2xl lg:text-3xl font-heading font-medium mb-12">
+                <h3 className="text-2xl lg:text-3xl font-heading font-medium mb-12">
                   Hi, I’m Kartik 🤘
                 </h3>
-                <h2 className="text-4xl lg:text-5xl font-heading font-medium">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium">
                   <pre>
                     I understand your wants,
                     <br /> build your needs, <br />
@@ -213,7 +213,7 @@ const Home = () => {
                     ></path>
                   </svg>
                 </div>
-                <p className="mb-8 text-xl mt-8 mb-12">
+                <p className="text-xl mt-8 mb-12">
                   I am an architect of innovative and intuitive solutions which
                   helps bring your vision to reality at{" "}
                   <a
@@ -229,7 +229,7 @@ const Home = () => {
                 {/* <!--I  carve your vision into reality with intuitive functionalities , resilient  systems and feasible products.--> */}
                 <div className="">
                   <a
-                    className="inline-block w-full lg:w-auto py-3 px-6 font-bold border rounded bg-linkedInBlue text-white rounded-3xl text-sm"
+                    className="inline-block w-full lg:w-auto py-3 px-6 font-bold border  bg-linkedInBlue text-white rounded-3xl text-sm"
                     href="https://cal.com/kartik-sorathiya"
                     target="_blank"
                   >
@@ -316,7 +316,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-8 md:py-20">
           <div className="container lg:px-32 px-5 mx-auto max-w-screen-xl">
             <div className="flex flex-wrap content-start	 -mx-4">
               <div className="w-full lg:w-1/2 md:w-1/2 px-4 mb-5">
@@ -325,7 +325,7 @@ const Home = () => {
                     Work Experience 💻
                   </h2>
                   <svg
-                    className="mb-12 "
+                    className="mb-8 md:mb-12 "
                     xmlns="http://www.w3.org/2000/svg"
                     width="258"
                     height="14"
@@ -338,7 +338,7 @@ const Home = () => {
                       stroke-width="4"
                     />
                   </svg>
-                  <div className="flex mb-10">
+                  <div className="flex mb-6 md:mb-10">
                     <div className="max-w-sm">
                       <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
                         Solvative
@@ -351,7 +351,7 @@ const Home = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex mb-10">
+                  <div className="flex mb-6 md:mb-10">
                     <div className="max-w-sm">
                       <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
                         Seneca Hackathon
@@ -370,7 +370,7 @@ const Home = () => {
                     Education 🎓
                   </h2>
                   <svg
-                    className="mb-12"
+                    className="mb-8 md:mb-12"
                     xmlns="http://www.w3.org/2000/svg"
                     width="159"
                     height="14"
@@ -383,7 +383,7 @@ const Home = () => {
                       stroke-width="4"
                     />
                   </svg>
-                  <div className="flex mb-10">
+                  <div className="flex mb-6 md:mb-10">
                     <div className="max-w-sm">
                       <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
                         Seneca College
@@ -394,7 +394,7 @@ const Home = () => {
                       <p className="text-gray-500 leading-loose">2020 - 2021</p>
                     </div>
                   </div>
-                  <div className="flex mb-10">
+                  <div className="flex mb-6 md:mb-10">
                     <div className="max-w-sm">
                       <h3 className="mb-4 -mt-1 text-xl font-medium font-heading">
                         L.D. College of Engineering
@@ -413,7 +413,7 @@ const Home = () => {
                     Skills 🪄
                   </h2>
                   <svg
-                    className="mb-12"
+                    className="mb-8 md:mb-12"
                     xmlns="http://www.w3.org/2000/svg"
                     width="84"
                     height="14"
@@ -426,7 +426,7 @@ const Home = () => {
                       stroke-width="4"
                     />
                   </svg>
-                  <div className="flex mb-10">
+                  <div className="flex mb-6 md:mb-10">
                     <div className="w-full">
                       <h3 className="mb-6 -mt-1 text-xl font-light font-heading">
                         Requirement Gathering and Analysis
@@ -456,7 +456,7 @@ const Home = () => {
                     Certificates 💯
                   </h2>
                   <svg
-                    className="mb-12"
+                    className="mb-8 md:mb-12"
                     xmlns="http://www.w3.org/2000/svg"
                     width="159"
                     height="14"
@@ -469,7 +469,7 @@ const Home = () => {
                       stroke-width="4"
                     />
                   </svg>
-                  <div className="flex mb-10">
+                  <div className="flex mb-6 md:mb-10">
                     <div className="w-1/3">
                       <a
                         href="https://www.credly.com/badges/50e5c366-bb09-49aa-94d5-e679b06ca67d/public_url"
@@ -509,7 +509,7 @@ const Home = () => {
                     Tools ⚒️ that makes me, me!
                   </h2>
                   <svg
-                    className="mb-12"
+                    className="mb-8 md:mb-12"
                     xmlns="http://www.w3.org/2000/svg"
                     width="159"
                     height="14"
@@ -1023,7 +1023,7 @@ const Home = () => {
                     <p className="lg:text-2xl md:text-xl text-sm font-bold font-heading text-white">
                       {currently_playing_data && currently_playing_data.artist}
                     </p>
-                    <p className="lg:text-lg md:text-sm text-xs text-gray-500 text-gray-300">
+                    <p className="lg:text-lg md:text-sm text-xs  text-gray-300">
                       {currently_playing_data && currently_playing_data.album}
                     </p>
                   </div>
@@ -1073,7 +1073,7 @@ const Home = () => {
           <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-800"></div>
           <div className="relative max-w-screen-xl container px-4 mx-auto">
             <div className="flex flex-wrap items-center -mx-4">
-              <div className="w-full lg:w-1/2 px-4 mb-5 mb-12 lg:mb-0">
+              <div className="w-full lg:w-1/2 px-4  mb-12 lg:mb-0">
                 <div className="text-center lg:text-left">
                   {/* <img
                     className="w-36 mb-6 object-cover inline-flex"
@@ -1188,7 +1188,7 @@ const Home = () => {
                   </a>
                 </div>
               </div>
-              <div className="mt-12 mb-8 border-b border-gray-50"></div>
+              <div className="mt-8 md:mt-12 mb-4 md:mb-8 border-b border-gray-50"></div>
               <div className="container px-4 mx-auto">
                 <p className="text-center text-sm text-gray-400">
                   All rights reserved © Kartik Sorathiya
