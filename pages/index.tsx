@@ -186,10 +186,10 @@ const Home = () => {
                     alt=""
                   />
                 </div>
-                <h3 className="mb-8 text-2xl lg:text-3xl font-heading font-medium mb-12">
+                <h3 className="text-2xl lg:text-3xl font-heading font-medium mb-12">
                   Hi, I’m Kartik 🤘
                 </h3>
-                <h2 className="text-4xl lg:text-5xl font-heading font-medium">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium">
                   <pre>
                     I understand your wants,
                     <br /> build your needs, <br />
@@ -213,7 +213,7 @@ const Home = () => {
                     ></path>
                   </svg>
                 </div>
-                <p className="mb-8 text-xl mt-8 mb-12">
+                <p className="text-xl mt-8 mb-12">
                   I am an architect of innovative and intuitive solutions which
                   helps bring your vision to reality at{" "}
                   <a
@@ -229,7 +229,7 @@ const Home = () => {
                 {/* <!--I  carve your vision into reality with intuitive functionalities , resilient  systems and feasible products.--> */}
                 <div className="">
                   <a
-                    className="inline-block w-full lg:w-auto py-3 px-6 font-bold border rounded bg-linkedInBlue text-white rounded-3xl text-sm"
+                    className="inline-block w-full lg:w-auto py-3 px-6 font-bold border  bg-linkedInBlue text-white rounded-3xl text-sm"
                     href="https://cal.com/kartik-sorathiya"
                     target="_blank"
                   >
@@ -1023,7 +1023,7 @@ const Home = () => {
                     <p className="lg:text-2xl md:text-xl text-sm font-bold font-heading text-white">
                       {currently_playing_data && currently_playing_data.artist}
                     </p>
-                    <p className="lg:text-lg md:text-sm text-xs text-gray-500 text-gray-300">
+                    <p className="lg:text-lg md:text-sm text-xs  text-gray-300">
                       {currently_playing_data && currently_playing_data.album}
                     </p>
                   </div>
@@ -1073,7 +1073,7 @@ const Home = () => {
           <div className="absolute top-0 left-0 lg:bottom-0 h-112 lg:h-auto w-full lg:w-8/12 bg-gray-800"></div>
           <div className="relative max-w-screen-xl container px-4 mx-auto">
             <div className="flex flex-wrap items-center -mx-4">
-              <div className="w-full lg:w-1/2 px-4 mb-5 mb-12 lg:mb-0">
+              <div className="w-full lg:w-1/2 px-4  mb-12 lg:mb-0">
                 <div className="text-center lg:text-left">
                   {/* <img
                     className="w-36 mb-6 object-cover inline-flex"
