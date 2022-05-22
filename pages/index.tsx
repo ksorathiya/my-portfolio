@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { generateRSS } from "../rssUtil";
 import { Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useState} from "react";
 import { useTimeoutFn } from "react-use";
 
 // import { Markdown } from "../components/Markdown";
@@ -10,6 +10,7 @@ import { useTimeoutFn } from "react-use";
 import { loadBlogPosts, loadMarkdownFile } from "../loader";
 // import { PostCard } from "../components/PostCard";
 import useSWR from "swr";
+import LikeCounter from "../components/LikeCounter";
 
 const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
 
@@ -26,13 +27,6 @@ const Home = () => {
     fetcher
   );
 
-//   const { data: recently_played_data } = useSWR(
-//     "/api/spotify-recently-played",
-//     fetcher,
-//     {
-//       refreshInterval: 5000,
-//     }
-//   );
 
   let randInt = function (min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -62,12 +56,15 @@ const Home = () => {
         ")"
     );
   }, 500);
+
   return (
     <div className="antialiased bg-body text-body font-body">
       <Head>
         <title>Introducing Kartik</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
       <div className="">
         <section>
           <div className="container mx-auto px-4 max-w-screen-xl">
@@ -1103,7 +1100,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-
+        <LikeCounter />
         <section>
           <div className="container max-w-screen-xl mx-auto px-4">
             <footer className="py-8">
