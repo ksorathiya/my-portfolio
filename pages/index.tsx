@@ -2,19 +2,17 @@ import Head from "next/head";
 import Image from "next/image";
 import { generateRSS } from "../rssUtil";
 import { Transition } from "@headlessui/react";
-import { Fragment, useState, useEffect, useRef } from "react";
+import { Fragment, useState} from "react";
 import { useTimeoutFn } from "react-use";
 
 // import { Markdown } from "../components/Markdown";
 // import { PostData, loadBlogPosts, loadMarkdownFile } from "../loader";
 import { loadBlogPosts, loadMarkdownFile } from "../loader";
-import * as LottieInteractivity from "@lottiefiles/lottie-interactivity";
 // import { PostCard } from "../components/PostCard";
 import useSWR from "swr";
+import LikeCounter from "../components/LikeCounter";
 
 const fetcher = (url: RequestInfo) => fetch(url).then((r) => r.json());
-
-const LIKES_URL = "https://likes.meet-simplystech.workers.dev";
 
 const Home = () => {
   const { data: currently_playing_data } = useSWR(
@@ -29,83 +27,6 @@ const Home = () => {
     fetcher
   );
 
-  const [likes, setLikes] = useState(0);
-  const [isLikeButtonClicked, setIsLikeButtonClicked] = useState(false);
-  const lottieHeartRef = useRef<any>(null);
-  const lottieHeartBrokenRef = useRef<any>(null);
-
-  const getLikes = async () => {
-    const response = await fetch(LIKES_URL);
-    const data = await response.json();
-    setLikes(data.likes);
-  };
-
-  useEffect(() => {
-    getLikes();
-    LottieInteractivity.create({
-      player: lottieHeartRef.current,
-      mode: "cursor",
-      actions: [
-        {
-          type: "click",
-          forceFlag: false,
-        },
-      ],
-    });
-  }, []);
-
-  useEffect(()=>{
-    if(isLikeButtonClicked){
-    LottieInteractivity.create({
-      player: lottieHeartBrokenRef.current,
-      mode: "cursor",
-      actions: [
-        {
-          type: "click",
-          forceFlag: false,
-          },
-        ],
-      });
-    }
-    else{
-    LottieInteractivity.create({
-      player: lottieHeartRef.current,
-      mode: "cursor",
-      actions: [
-        {
-          type: "click",
-          forceFlag: false,
-        },
-      ],
-    });
-  }
-  },[isLikeButtonClicked])
-
-  const likeButtonClicked = async () => {
-    try {
-      if (isLikeButtonClicked) {
-        await fetch(LIKES_URL, {
-          method: "POST",
-          body: JSON.stringify({ likes: +likes - 1 }),
-        });
-        setTimeout(()=>{
-          setIsLikeButtonClicked(false);
-          setLikes((prev) => prev - 1);
-        },1500)
-      } else {
-        await fetch(LIKES_URL, {
-          method: "POST",
-          body: JSON.stringify({ likes: +likes + 1 }),
-        });
-        setTimeout(()=>{
-          setIsLikeButtonClicked(true);
-          setLikes((prev) => prev + 1);
-        },1500)
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   let randInt = function (min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -1179,45 +1100,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section id="like-counter">
-        <lottie-player
-            onClick={likeButtonClicked}
-              ref={lottieHeartBrokenRef}
-              id="lottiePlayer"
-              src="lottie/heart-broken.json"
-              background="transparent"
-              speed="1"
-              style={{
-                width: "100px",
-                height: "100px",
-                display: isLikeButtonClicked ? "block" : "none",
-                position: "fixed",
-                right: 0,
-                bottom: 0 
-              }}
-              className="fixed right-0 bottom-0"
-            >  </lottie-player> 
-            <lottie-player
-              onClick={likeButtonClicked}
-              ref={lottieHeartRef}
-              id="lottiePlayer1"
-              src="lottie/heart.json"
-              background="transparent"
-              speed="1"
-              style={{
-                width: "100px",
-                height: "100px",
-                display: isLikeButtonClicked ? "none" : "block",
-                position: "fixed",
-                right: 0,
-                bottom: 0 
-              }}
-            ></lottie-player>
-            <div className="fixed right-25px bottom-0 px-4 py-1">
-              {likes}
-            </div>
-     
-        </section>
+        <LikeCounter />
         <section>
           <div className="container max-w-screen-xl mx-auto px-4">
             <footer className="py-8">
