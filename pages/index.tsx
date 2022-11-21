@@ -358,7 +358,7 @@ const Home = () => {
                       </h3>
                       <h6 className="mb-2 text-md">Director of IT</h6>
                       <p className="text-gray-500 leading-loose">
-                        January 2020 - present
+                        January 2021 - August 2021
                       </p>
                     </div>
                   </div>
