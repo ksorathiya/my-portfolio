@@ -32,6 +32,8 @@ const App: React.FC = ({ Component, pageProps }: any) => {
           data-website-id="cdae2032-c587-40f3-b564-80f15e53f19a"
           src="https://analytics.sorathiyakartik.com/umami.js"
         ></script>
+        
+        <script async defer data-website-id="c1b22a5c-1c32-4600-b517-f88f7b14c9a0" src="http://34.95.33.177:3000/umami.js"></script>
         {globals.googleAnalyticsId && (
           <script
             async
