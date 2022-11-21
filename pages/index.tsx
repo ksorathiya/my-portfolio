@@ -1123,7 +1123,7 @@ const Home = () => {
                   <li className="mb-2 md:mb-0">
                     <a
                       className="text-sm text-gray-900 hover:text-gray-700"
-                      href="https://analytics.sorathiyakartik.com/share/mKgdevDb/Kartik%20-%20Portfolio"
+                      href="https://analytics.kartiksorathiya.com/share/oQNUnoDq/Kartik's%20Portfolio"
                       target="_blank"
                     >
                       Site Analytics
