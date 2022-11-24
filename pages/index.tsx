@@ -26,13 +26,13 @@ const Home = () => {
     fetcher
   );
 
-//   const { data: recently_played_data } = useSWR(
-//     "/api/spotify-recently-played",
-//     fetcher,
-//     {
-//       refreshInterval: 5000,
-//     }
-//   );
+  //   const { data: recently_played_data } = useSWR(
+  //     "/api/spotify-recently-played",
+  //     fetcher,
+  //     {
+  //       refreshInterval: 5000,
+  //     }
+  //   );
 
   let randInt = function (min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -99,12 +99,49 @@ const Home = () => {
               </svg>
             </button> */}
                 </div>
-                {/* <ul className="hidden lg:flex ml-auto mr-10 items-center w-auto space-x-12">
-            <li><a className="text-sm text-gray-500 hover:text-gray-700" href="#">About</a></li>
-            <li><a className="text-sm text-gray-500 hover:text-gray-700" href="#">Company</a></li>
-            <li><a className="text-sm text-gray-500 hover:text-gray-700" href="#">Services</a></li>
-            <li><a className="text-sm text-gray-500 hover:text-gray-700" href="#">Testimonials</a></li>
-          </ul> */}
+                <ul className="hidden lg:flex ml-auto mr-10 items-center w-auto space-x-12">
+                  {/* <li>
+                    <a
+                      className="text-sm text-gray-500 hover:text-gray-700"
+                      href="#"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="text-sm text-gray-500 hover:text-gray-700"
+                      href="#"
+                    >
+                      Company
+                    </a>
+                  </li>*/}
+                  <li>
+                    <a
+                      className="text-sm text-gray-500 hover:text-gray-700"
+                      target="_blank"
+                      href="https://www.linkedin.com/in/kartiksorathiya/"
+                    >
+                      <img
+                        src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
+                        alt=""
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="text-sm text-gray-500 hover:text-gray-700"
+                      target="_blank"
+                      href="https://www.hackerrank.com/sorathiyakartik"
+                    >
+                      <img
+                        src="https://img.shields.io/badge/-Hackerrank-2EC866?style=for-the-badge&logo=HackerRank&logoColor=white"
+                        alt=""
+                      />
+                    </a>
+                  </li>
+                </ul>
+
                 <a
                   className="hidden lg:block md:block px-6 py-3 text-sm text-white font-bold border border-gray-100 hover:border-gray-200 rounded-3xl bg-black"
                   href="https://docs.google.com/document/d/1T7Xl2qQHVSGoRYwqaGK23bnGhYISsMAO/edit?usp=sharing&amp;ouid=113641347303871215868&amp;rtpof=true&amp;sd=true"
@@ -506,7 +543,7 @@ const Home = () => {
               <div className="w-full lg:w-1/2 md:w-full px-4 mb-5">
                 <div className="">
                   <h2 className=" text-3xl mt-3 font-medium font-heading">
-                    Tools ⚒️ that makes me, me!
+                    Tools ⚒️ that make me, me!
                   </h2>
                   <svg
                     className="mb-8 md:mb-12"
