@@ -623,6 +623,9 @@ const Home = () => {
             </div>
           </div>
         </section>
+        {/* <section>
+          <figure data-behold-id="rhatKkWGxOHOZXhnQxsJ"></figure>
+        </section> */}
         {/* <section id="periodic-table" className="py-20 px-16 hidden md:block">
           <h1>My Periodic Table</h1>
           <h5>How I spend my time.</h5>
@@ -949,6 +952,7 @@ const Home = () => {
             </div>
           </aside>
         </section> */}
+
         {random_quote_data && random_quote_data.content && (
           <section
             id="random-quote"
@@ -1166,6 +1170,7 @@ const Home = () => {
                       Site Analytics
                     </a>
                   </li>
+
                   {/* <li className="mb-2 md:mb-0">
                     <a
                       className="text-sm text-gray-900 hover:text-gray-700"
@@ -1191,7 +1196,7 @@ const Home = () => {
                     </a>
                   </li> */}
                 </ul>
-                <div>
+                <div className="my-10">
                   <a
                     className="inline-block mr-8"
                     href="https://www.facebook.com/ksorathiya/"
@@ -1199,6 +1204,7 @@ const Home = () => {
                   >
                     <img
                       src="images/facebook-circle-line-1.svg"
+                      style={{ color: "#3b5998" }}
                       alt="Facebook Logo"
                       className=""
                     />
@@ -1222,6 +1228,14 @@ const Home = () => {
                       src="images/linkedin-box-line-1.svg"
                       alt="LinkedIn Logo"
                     />
+                  </a>
+                </div>
+                <div className="flex justify-center">
+                  <a
+                    target="_blank"
+                    href="https://www.buymeacoffee.com/kartiksorathiya"
+                  >
+                    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kartiksorathiya&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
                   </a>
                 </div>
               </div>
