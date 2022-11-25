@@ -33,7 +33,7 @@ const App: React.FC = ({ Component, pageProps }: any) => {
           src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
           data-id="kartiksorathiya"
           data-description="Support me on Buy me a coffee!"
-          data-message="Thank you for visiting. If you are impressed by my profile, you can show your appreciation by buying me a coffee and I'll make sure to get along with you :) "
+          data-message="Thank you for visiting. If you are impressed by my profile, you can show me your appreciation by buying me a coffee ☺️"
           data-color="#FF813F"
           data-position="Right"
           data-x_margin="18"
