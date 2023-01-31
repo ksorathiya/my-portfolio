@@ -28,18 +28,6 @@ const App: React.FC = ({ Component, pageProps }: any) => {
         ></script>
         <script src="https://w.behold.so/widget.js" type="module"></script>
         <script
-          data-name="BMC-Widget"
-          data-cfasync="false"
-          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-          data-id="kartiksorathiya"
-          data-description="Support me on Buy me a coffee!"
-          data-message="Thank you for visiting. If you are impressed by my profile, you can show me your appreciation by buying me a coffee ☺️"
-          data-color="#FF813F"
-          data-position="Right"
-          data-x_margin="18"
-          data-y_margin="18"
-        ></script>
-        <script
           async
           defer
           data-website-id="c1b22a5c-1c32-4600-b517-f88f7b14c9a0"
