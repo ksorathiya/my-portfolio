@@ -509,6 +509,21 @@ const Home = () => {
                   <div className="flex mb-6 md:mb-10">
                     <div className="w-1/3">
                       <a
+                        href="https://www.credly.com/badges/28a70fae-62a2-41cc-8193-e098bc5640db/public_url"
+                        target="_blank"
+                      >
+                        <Image
+                          className="mt-12 lg:mb-10  object-cover inline drop-shadow-lg"
+                          src="/mockup-assets/images/pmp-certification.png"
+                          width="50px"
+                          height="70px"
+                          layout="responsive"
+                          objectFit="contain"
+                        />
+                      </a>
+                    </div>
+                    <div className="w-1/3">
+                      <a
                         href="https://www.credly.com/badges/50e5c366-bb09-49aa-94d5-e679b06ca67d/public_url"
                         target="_blank"
                       >
