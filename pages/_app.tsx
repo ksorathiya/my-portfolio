@@ -26,7 +26,7 @@ const App: React.FC = ({ Component, pageProps }: any) => {
             `,
           }}
         ></script>
-        <script src="https://w.behold.so/widget.js" type="module"></script>
+
         <script
           async
           defer

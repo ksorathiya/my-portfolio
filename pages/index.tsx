@@ -638,9 +638,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        {/* <section>
-          <figure data-behold-id="rhatKkWGxOHOZXhnQxsJ"></figure>
-        </section> */}
+
         {/* <section id="periodic-table" className="py-20 px-16 hidden md:block">
           <h1>My Periodic Table</h1>
           <h5>How I spend my time.</h5>
@@ -1159,6 +1157,40 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* INSTAFEED */}
+        <section class="py-10 bg-gray-50 insta-background overflow-hidden">
+          <div class="container mx-auto px-4">
+            <div class="py-16 px-8 md:px-16 overflow-hidden rounded-3xl">
+              <div class="flex flex-wrap items-center -m-4">
+                <div class="w-full md:w-1/2 p-4">
+                  <h2 class="font-heading text-4xl md:text-5xl text-white font-black ">
+                    A few glimpse from my Instagram. <br />
+                    <div className="mt-10 text-2xl ">
+                      Follow for more{" "}
+                      <a
+                        href="https://www.instagram.com/k_sorathiya/"
+                        className="hover:underline"
+                        target="_blank"
+                      >
+                        @k_sorathiya
+                      </a>
+                    </div>
+                  </h2>
+                </div>
+                <div className="w-full md:w-1/2 p-4">
+                  <figure data-behold-id="pBb4V3n5PsWnDeDcRTOh"></figure>
+                  <script
+                    src="https://w.behold.so/widget.js"
+                    type="module"
+                  ></script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* INSTAFEED */}
 
         <section>
           <div className="container max-w-screen-xl mx-auto px-4">
