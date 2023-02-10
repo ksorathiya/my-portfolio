@@ -1159,12 +1159,12 @@ const Home = () => {
         </section>
 
         {/* INSTAFEED */}
-        <section class="py-10 bg-gray-50 insta-background overflow-hidden">
-          <div class="container mx-auto px-4">
-            <div class="py-16 px-8 md:px-16 overflow-hidden rounded-3xl">
-              <div class="flex flex-wrap items-center -m-4">
-                <div class="w-full md:w-1/2 p-4">
-                  <h2 class="font-heading text-4xl md:text-5xl text-white font-black ">
+        <section className="py-10 bg-gray-50 insta-background overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="py-16 px-8 md:px-16 overflow-hidden rounded-3xl">
+              <div className="flex flex-wrap items-center -m-4">
+                <div className="w-full md:w-1/2 p-4">
+                  <h2 className="font-heading text-4xl md:text-5xl text-white font-black ">
                     A few glimpse from my Instagram. <br />
                     <div className="mt-10 text-2xl ">
                       Follow for more{" "}
