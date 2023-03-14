@@ -26,6 +26,7 @@ const App: React.FC = ({ Component, pageProps }: any) => {
             `,
           }}
         ></script>
+        <script src="https://cdn.counter.dev/script.js" data-id="8cb56b09-edfe-40d6-bd49-fbd8a77bf040" data-utcoffset="-4"></script>
 
         <script
           async
