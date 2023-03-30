@@ -23,6 +23,160 @@
       locale="en"
     ></apple-pay-button>
 
+    
+    
+    <script>
+      function onApplePayButtonClicked() { 
+
+    if (!ApplePaySession) {
+        return;
+    }
+    
+    // Define ApplePayPaymentRequest
+    const request = {
+        "countryCode": "US",
+        "currencyCode": "USD",
+        "merchantCapabilities": [
+            "supports3DS",
+            "supportsDebit",
+            "supportsCredit"
+        ],
+        "shippingMethods": [
+            {
+                "label": "Free Standard Shipping",
+                "amount": "0.00",
+                "detail": "Arrives in 5-7 days",
+                "identifier": "standardShipping",
+                "dateComponentsRange": {
+                    "startDateComponents": {
+                        "years": 2023,
+                        "months": 4,
+                        "days": 4,
+                        "hours": 0
+                    },
+                    "endDateComponents": {
+                        "years": 2023,
+                        "months": 4,
+                        "days": 6,
+                        "hours": 0
+                    }
+                }
+            },
+            {
+                "label": "Express Shipping",
+                "amount": "1.00",
+                "detail": "Arrives in 2-3 days",
+                "identifier": "expressShipping",
+                "dateComponentsRange": {
+                    "startDateComponents": {
+                        "years": 2023,
+                        "months": 4,
+                        "days": 1,
+                        "hours": 0
+                    },
+                    "endDateComponents": {
+                        "years": 2023,
+                        "months": 4,
+                        "days": 2,
+                        "hours": 0
+                    }
+                }
+            }
+        ],
+        "shippingType": "shipping",
+        "supportedNetworks": [
+            "visa",
+            "masterCard",
+            "amex",
+            "discover"
+        ],
+        "requiredBillingContactFields": [
+            "postalAddress",
+            "name",
+            "phoneticName"
+        ],
+        "requiredShippingContactFields": [
+            "postalAddress",
+            "name",
+            "phone",
+            "email"
+        ],
+        "lineItems": [
+            {
+                "label": "Sales Tax",
+                "amount": "0.00"
+            },
+            {
+                "label": "Shipping",
+                "amount": "0.00"
+            }
+        ],
+        "total": {
+            "label": "Demo (Card is not charged)",
+            "amount": "1.99",
+            "type": "final"
+        }
+    };
+    
+    // Create ApplePaySession
+    const session = new ApplePaySession(3, request);
+    
+    session.onvalidatemerchant = async event => {
+        // Call your own server to request a new merchant session.
+        const merchantSession = await validateMerchant();
+        session.completeMerchantValidation(merchantSession);
+    };
+    
+    session.onpaymentmethodselected = event => {
+        // Define ApplePayPaymentMethodUpdate based on the selected payment method.
+        // No updates or errors are needed, pass an empty object.
+        const update = {};
+        session.completePaymentMethodSelection(update);
+    };
+    
+    session.onshippingmethodselected = event => {
+        // Define ApplePayShippingMethodUpdate based on the selected shipping method.
+        // No updates or errors are needed, pass an empty object. 
+        const update = {};
+        session.completeShippingMethodSelection(update);
+    };
+    
+    session.onshippingcontactselected = event => {
+        // Define ApplePayShippingContactUpdate based on the selected shipping contact.
+        const update = {};
+        session.completeShippingContactSelection(update);
+    };
+    
+    session.onpaymentauthorized = event => {
+        // Define ApplePayPaymentAuthorizationResult
+        const result = {
+            "status": ApplePaySession.STATUS_SUCCESS
+        };
+        session.completePayment(result);
+    };
+    
+    session.oncouponcodechanged = event => {
+        // Define ApplePayCouponCodeUpdate
+        const newTotal = calculateNewTotal(event.couponCode);
+        const newLineItems = calculateNewLineItems(event.couponCode);
+        const newShippingMethods = calculateNewShippingMethods(event.couponCode);
+        const errors = calculateErrors(event.couponCode);
+        
+        session.completeCouponCodeChange({
+            newTotal: newTotal,
+            newLineItems: newLineItems,
+            newShippingMethods: newShippingMethods,
+            errors: errors,
+        });
+    };
+    
+    session.oncancel = event => {
+        // Payment cancelled by WebKit
+    };
+    
+    session.begin();
+}
+    </script>
     <!-- <script>
       // Define the merchant capabilities and supported networks
       var merchantCapabilities = ["supports3DS"];
