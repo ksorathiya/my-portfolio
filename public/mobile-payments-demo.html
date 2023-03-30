@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
+    <style>
+      apple-pay-button {
+        --apple-pay-button-width: 150px;
+        --apple-pay-button-height: 30px;
+        --apple-pay-button-border-radius: 3px;
+        --apple-pay-button-padding: 0px 0px;
+        --apple-pay-button-box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <apple-pay-button
+      buttonstyle="black"
+      type="check-out"
+      locale="en"
+    ></apple-pay-button>
+
+    <!-- <script>
+      // Define the merchant capabilities and supported networks
+      var merchantCapabilities = ["supports3DS"];
+      var supportedNetworks = ["visa", "masterCard", "amex"];
+
+      // Create the payment request object
+      var paymentRequest = {
+        countryCode: "US",
+        currencyCode: "USD",
+        merchantCapabilities: merchantCapabilities,
+        supportedNetworks: supportedNetworks,
+        total: {
+          label: "Your order total",
+          amount: "10.00",
+        },
+      };
+
+      // Initialize the Apple Pay button
+      if (window.ApplePaySession) {
+        var merchantIdentifier = "merchant.conair.applepay";
+        var promise =
+          ApplePaySession.canMakePaymentsWithActiveCard(merchantIdentifier);
+        promise.then(function (canMakePayments) {
+          if (canMakePayments) {
+            var button = document.getElementById("apple-pay-button");
+            button.addEventListener("click", function () {
+              // Create the Apple Pay session
+              var session = new ApplePaySession(1, paymentRequest);
+
+              // Handle the onvalidatemerchant event
+              session.onvalidatemerchant = function (event) {
+                var merchantSession = event.validationURL;
+                // Send the merchant session to your server to process the payment
+                // Your server should return a merchant session object
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "YOUR_SERVER_ENDPOINT", true);
+                xhr.setRequestHeader(
+                  "Content-Type",
+                  "application/json;charset=UTF-8"
+                );
+                xhr.onreadystatechange = function () {
+                  if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                      var merchantSession = xhr.responseText;
+                      // Complete the validation with the merchant session
+                      session.completeMerchantValidation(
+                        JSON.parse(merchantSession)
+                      );
+                    } else {
+                      // Handle the error
+                    }
+                  }
+                };
+                xhr.send(JSON.stringify({ validationURL: merchantSession }));
+              };
+
+              // Handle the onpaymentauthorized event
+              session.onpaymentauthorized = function (event) {
+                // Send the payment token to your server to process the payment
+                // Your server should return a payment object
+                var payment = event.payment.token;
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "YOUR_SERVER_ENDPOINT", true);
+                xhr.setRequestHeader(
+                  "Content-Type",
+                  "application/json;charset=UTF-8"
+                );
+                xhr.onreadystatechange = function () {
+                  if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                      var result = xhr.responseText;
+                      // Complete the payment with the payment result
+                      session.completePayment({ status: "SUCCESS" });
+                    } else {
+                      // Handle the error
+                    }
+                  }
+                };
+                xhr.send(JSON.stringify({ payment: payment }));
+              };
+
+              // Begin the Apple Pay session
+              session.begin();
+            });
+          }
+        });
+      }
+    </script> -->
+  </body>
+</html>
