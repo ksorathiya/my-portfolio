@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <style>
       apple-pay-button {
         --apple-pay-button-width: 150px;
@@ -23,10 +25,21 @@
       locale="en"
 onclick="onApplePayButtonClicked()"
     ></apple-pay-button>
+		
+		
+			<div style="display:none" id="ckoApplePay" class="apple-pay-button apple-pay-button-text-buy" lang=en></div>
+			<p style="display:none" id="ckoApplePayError">ApplePay is not available in this environment.</p>
+			<script src="app.js"></script>
+
 
     
     
-    <script>
+<!--     <script>
+			
+			
+			var BACKEND_URL_VALIDATE_SESSION = 'https://711b-2607-fea8-a69f-39f0-609c-bb92-e45a-1353.ngrok.io/validateSession'
+  var BACKEND_URL_PAY = 'https://711b-2607-fea8-a69f-39f0-609c-bb92-e45a-1353.ngrok.io/pay'
+			
       function onApplePayButtonClicked() { 
 
     if (!ApplePaySession) {
@@ -122,11 +135,13 @@ onclick="onApplePayButtonClicked()"
     // Create ApplePaySession
     const session = new ApplePaySession(3, request);
     
-    session.onvalidatemerchant = async event => {
-        // Call your own server to request a new merchant session.
-        const merchantSession = await validateMerchant();
-        session.completeMerchantValidation(merchantSession);
-    };
+    // This is the first event that Apple triggers. Here you need to validate the
+    // Apple Pay Session from your Back-End
+    session.onvalidatemerchant = function (event) {
+      _validateApplePaySession(event.validationURL, function (merchantSession) {
+        session.completeMerchantValidation(merchantSession)
+      })
+    }
     
     session.onpaymentmethodselected = event => {
         // Define ApplePayPaymentMethodUpdate based on the selected payment method.
@@ -177,7 +192,7 @@ onclick="onApplePayButtonClicked()"
     
     session.begin();
 }
-    </script>
+    </script> -->
     <!-- <script>
       // Define the merchant capabilities and supported networks
       var merchantCapabilities = ["supports3DS"];
