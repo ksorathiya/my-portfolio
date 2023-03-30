@@ -34,7 +34,7 @@ onclick="onApplePayButtonClicked()"
 
     
     
-<!--     <script>
+    <script>
 			
 			
 			var BACKEND_URL_VALIDATE_SESSION = 'https://711b-2607-fea8-a69f-39f0-609c-bb92-e45a-1353.ngrok.io/validateSession'
@@ -142,6 +142,24 @@ onclick="onApplePayButtonClicked()"
         session.completeMerchantValidation(merchantSession)
       })
     }
+	      
+		var _validateApplePaySession = function (appleUrl, callback) {
+    // I'm using AXIOS to do a POST request to the backend but any HTTP client can be used
+    axios
+      .post(
+        BACKEND_URL_VALIDATE_SESSION,
+        {
+          appleUrl
+        },
+        {
+          headers: { 'Access-Control-Allow-Origin': '*' }
+        }
+      )
+      .then(function (response) {
+        callback(response.data)
+      })
+  	}
+
     
     session.onpaymentmethodselected = event => {
         // Define ApplePayPaymentMethodUpdate based on the selected payment method.
@@ -192,7 +210,7 @@ onclick="onApplePayButtonClicked()"
     
     session.begin();
 }
-    </script> -->
+    </script>
     <!-- <script>
       // Define the merchant capabilities and supported networks
       var merchantCapabilities = ["supports3DS"];
